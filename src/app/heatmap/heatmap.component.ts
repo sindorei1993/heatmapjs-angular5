@@ -27,23 +27,7 @@ export class HeatmapComponent implements OnInit {
   }
 
   putScripts() {
-    if (!this.elRef.nativeElement.ownerDocument.getElementById('google-map-script')) {
-      let node = this.elRef.nativeElement.ownerDocument.createElement('script');
-      node.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD1ZsCBLhB-lnNdgO0xBEV_u_dSD7RcLbI&language=fa&region=IR';
-      node.type = 'text/javascript';
-      node.id = 'google-map-script';
-      node.defer = true;
-      node.async = true;
-      this.elRef.nativeElement.ownerDocument.getElementsByTagName('body')[0].appendChild(node);
-    }
-
-    if (!this.elRef.nativeElement.ownerDocument.getElementById('google-marker-cluster')) {
-      let node = this.elRef.nativeElement.ownerDocument.createElement('script');
-      node.src = 'https://www.kilidstatic.com/markerclusterer.js';
-      node.type = 'text/javascript';
-      node.id = 'google-marker-cluster';
-      this.elRef.nativeElement.ownerDocument.getElementsByTagName('body')[0].appendChild(node);
-    }
+    
 
     if (!this.elRef.nativeElement.ownerDocument.getElementById('heatmap') && this.elRef.nativeElement.ownerDocument.getElementById('google-map-script')) {
       let node = this.elRef.nativeElement.ownerDocument.createElement('script');
